@@ -33,6 +33,11 @@ This project combines web scraping and natural language processing to build a **
 git clone https://github.com/your-username/company-finder-nlp-scraper.git
 cd company-finder-nlp-scraper
 
+---
+
+## ⚠️ Disclaimer
+- This tool uses web scraping, which may be subject to Google Maps' terms of service.
+- XPaths might change over time; updates may be required for consistent scraping.
 
 
 

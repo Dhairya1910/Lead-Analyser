@@ -21,7 +21,8 @@ This project combines web scraping and natural language processing to build a **
 ## 📂 Project Structure
 - model.py # Semantic matching using Sentence Transformers
 - scraper.py # Scraper for Google Maps using Selenium
-- refined_100_companies.csv # Sample cleaned dataset (Company Name, Industry, etc.)
+- index.html # homepage
+- results.html # showing results of search and download lead details
 
 
 ## ⚠️ Disclaimer

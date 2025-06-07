@@ -1,34 +1,21 @@
-import pandas as pd
-import numpy as np 
 from sentence_transformers import SentenceTransformer, util
+import pandas as pd
+import torch
 
-
-df = pd.read_csv("../refined_100_companies.csv")
+"""for Matching similar leads based on industry given by user.."""
 
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-company_texts = (df["Company Name"] + " " + df["Industry"]).tolist()
-company_embeddings = model.encode(company_texts, convert_to_tensor=True)
+def find_similar_leads(leads_df, original_industry, similarity_threshold=0.7):
 
-
-def Find_companies(user_input, top_finds=5):
-    query_embedding = model.encode(user_input, convert_to_tensor=True)
-    scores = util.pytorch_cos_sim(query_embedding, company_embeddings)[0]
-    top_results = scores.topk(k=top_finds)
+    company_texts = (leads_df["Company"] + " " + leads_df["Industry"]).tolist()
+    embeddings = model.encode(company_texts, convert_to_tensor=True)
     
-    matches = []
-    for score, idx in zip(top_results.values, top_results.indices):
-        row = df.iloc[idx.item()]
-        matches.append({
-            "Company Name": row["Company Name"],
-            "Industry": row["Industry"],
-            "Address": row["Address"],
-            "Phone Number": row["Phone Number"],
-            "Similarity Score": float(score)
-        })
-    return matches
 
+    query_embedding = model.encode(original_industry, convert_to_tensor=True)
+    similarities = util.pytorch_cos_sim(query_embedding, embeddings)[0]
+    
 
-results = Find_companies("web development")
-for match in results:
-    print(match)
+    leads_df["Similarity"] = similarities
+    similar_leads = leads_df[leads_df["Similarity"] > similarity_threshold]
+    return similar_leads.sort_values("Similarity", ascending=False)

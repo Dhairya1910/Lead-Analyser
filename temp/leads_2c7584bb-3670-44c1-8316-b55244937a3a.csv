@@ -1,0 +1,5 @@
+Company,Industry,Address,Phone,Website,Location,Similarity
+Fluid AI,AI ,"7th Floor, Tower A, Naman Midtown, Senapati Bapat Marg, Mumbai, Maharashtra 400013",022 4920 9000,fluid.ai,Mumbai,0.78701055
+Prisma AI,AI ,"5th Floor, Star Hub, 2, Chhatrapati Shivaji Maharaj Int'l Airport Rd, J B Nagar, Andheri East, Mumbai, Maharashtra 400059","4V49+58 Mumbai, Maharashtra",NA,Mumbai,0.7349485
+Cogno AI,AI ,"E-165, Solaris 1, Saki Vihar Rd, Powai, Mumbai, Maharashtra 400072",NA,NA,Mumbai,0.7100363
+Assert AI,AI ,"A-303, Kanakia Zillion, Bandra Kurla Complex, Kurla, Mumbai, Maharashtra 400070","3VGG+5C Kurla, Mumbai, Maharashtra",NA,Mumbai,0.7040326

@@ -29,6 +29,9 @@ This project combines web scraping and natural language processing to build a **
 - This tool uses web scraping, which may be subject to Google Maps' terms of service.
 - XPaths might change over time; updates may be required for consistent scraping.
 
+## 👨‍💻 Demo 
+- https://youtu.be/GDeHhx45jDc
+
 ## 🛠️ Setup Instructions
 
 ### 1. Clone the Repository
